@@ -16,7 +16,7 @@ Centralized State Management: Uses React Context (AuthContext) to manage user au
 
 Detailed Onboarding: Multi-step registration process for both Students and Industries, collecting a rich set of data points for the AI engine.
 
-Dynamic UI:
+### Dynamic UI:
 
 A smart, conditional navigation bar that changes based on login status and user type.
 
@@ -26,7 +26,7 @@ Visually appealing and functional dashboard mockups.
 
 Secure API Communication: A centralized axios service layer with interceptors automatically handles attaching JWT access tokens to protected requests.
 
-Backend (Node.js + Express.js)
+## Backend (Node.js + Express.js)
 Secure Authentication API: Full implementation of user registration and login using JSON Web Tokens (JWT), including access and refresh token logic.
 
 Advanced Data Modeling: Mongoose schemas designed to handle two distinct user types (student, industry) linked to a single User model for authentication, using refPath for dynamic population.
