@@ -40,6 +40,7 @@ const industrySchema = new mongoose.Schema({
         duration: { type: String, required: true },
         startDate: { type: Date },
         numberOfPositions: { type: Number, required: true },
+        numberOfPositions: { type: Number, required: true, min: 1 },
         workMode: { type: String, required: true },
         workingHours: { type: String }
     },

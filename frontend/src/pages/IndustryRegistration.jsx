@@ -1,9 +1,12 @@
-// // src/pages/IndustryRegistration.jsx
+/// src/pages/IndustryRegistration.jsx
 // import { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import api from '../services/api'; // 1. Import our api service
 
 // export default function IndustryRegistration() {
+//   const navigate = useNavigate();
 //   const [formData, setFormData] = useState({
-//     // Company Details
+//     // --- Your existing flat formData state ---
 //     companyName: '',
 //     companyEmail: '',
 //     companyPhone: '',
@@ -13,50 +16,38 @@
 //     companyAddress: '',
 //     city: '',
 //     state: '',
-    
-//     // Contact Person
 //     contactPersonName: '',
 //     contactPersonDesignation: '',
 //     contactPersonEmail: '',
 //     contactPersonPhone: '',
-    
-//     // Internship Details
 //     internshipTitle: '',
 //     department: '',
 //     internshipType: '',
 //     duration: '',
 //     startDate: '',
 //     numberOfPositions: '',
-    
-//     // Requirements
 //     requiredSkills: [],
 //     preferredCourse: [],
 //     minimumCGPA: '',
 //     yearOfStudy: [],
-    
-//     // Compensation & Benefits
 //     stipend: '',
 //     providesAccommodation: '',
 //     providesMeals: '',
 //     providesTransport: '',
 //     otherBenefits: '',
-    
-//     // Work Details
 //     workMode: '',
 //     workingHours: '',
 //     jobDescription: '',
 //     learningOutcomes: '',
-    
-//     // Preferences
 //     preferredStates: [],
 //     diversityPreferences: '',
 //     ruralCandidatesWelcome: '',
-    
-//     // Company Verification
 //     registrationNumber: '',
 //     gstNumber: '',
 //     panNumber: ''
 //   });
+//   const [error, setError] = useState('');
+//   const [loading, setLoading] = useState(false);
 
 //   const handleChange = (e) => {
 //     const { name, value } = e.target;
@@ -75,13 +66,83 @@
 //     }));
 //   };
 
-//   const handleSubmit = (e) => {
+//   // --- MODIFIED handleSubmit ---
+//   const handleSubmit = async (e) => {
 //     e.preventDefault();
-//     console.log('Industry Registration Data:', formData);
-//     // Handle form submission
-//   };
+//     setError('');
+//     setLoading(true);
 
-//   const skillsOptions = [
+//     // 2. Transform flat data to the nested structure the backend expects
+//     const profileData = {
+//         companyDetails: {
+//             companyName: formData.companyName,
+//             companyEmail: formData.companyEmail,
+//             companyPhone: formData.companyPhone,
+//             website: formData.website,
+//             companySize: formData.companySize,
+//             industry: formData.industry,
+//             companyAddress: formData.companyAddress,
+//             city: formData.city,
+//             state: formData.state,
+//         },
+//         contactPerson: {
+//             name: formData.contactPersonName,
+//             designation: formData.contactPersonDesignation,
+//             email: formData.contactPersonEmail,
+//             phone: formData.contactPersonPhone,
+//         },
+//         internshipDetails: {
+//             title: formData.internshipTitle,
+//             department: formData.department,
+//             internshipType: formData.internshipType,
+//             duration: formData.duration,
+//             startDate: formData.startDate,
+//             numberOfPositions: formData.numberOfPositions,
+//             workMode: formData.workMode,
+//             workingHours: formData.workingHours,
+//         },
+//         requirements: {
+//             requiredSkills: formData.requiredSkills,
+//             preferredCourse: formData.preferredCourse,
+//             minimumCGPA: formData.minimumCGPA,
+//             yearOfStudy: formData.yearOfStudy,
+//         },
+//         compensation: {
+//             stipend: formData.stipend,
+//             providesAccommodation: formData.providesAccommodation === 'yes',
+//             providesMeals: formData.providesMeals === 'yes',
+//             providesTransport: formData.providesTransport === 'yes',
+//             otherBenefits: formData.otherBenefits,
+//         },
+//         workDetails: {
+//             jobDescription: formData.jobDescription,
+//             learningOutcomes: formData.learningOutcomes,
+//         },
+//         preferences: {
+//             preferredStates: formData.preferredStates,
+//             diversityPreferences: formData.diversityPreferences,
+//             ruralCandidatesWelcome: formData.ruralCandidatesWelcome === 'yes',
+//         },
+//         verification: {
+//             registrationNumber: formData.registrationNumber,
+//             gstNumber: formData.gstNumber,
+//             panNumber: formData.panNumber,
+//         },
+//     };
+
+//     try {
+//       // 3. Send the transformed data to the backend
+//       await api.post('/industry/complete-profile', profileData);
+//       alert('Industry profile created successfully!');
+//       navigate('/industry/dashboard');
+//     } catch (err) {
+//       setError(err.response?.data?.message || 'Profile submission failed. Please check your data.');
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+  
+//     const skillsOptions = [
 //     'Python', 'JavaScript', 'Java', 'C++', 'React', 'Node.js',
 //     'Data Analysis', 'Machine Learning', 'Web Development',
 //     'Mobile Development', 'UI/UX Design', 'Digital Marketing',
@@ -693,9 +754,8 @@
 //     </div>
 //   )
 // }
-          
 
-/// src/pages/IndustryRegistration.jsx
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api'; // 1. Import our api service
@@ -703,7 +763,7 @@ import api from '../services/api'; // 1. Import our api service
 export default function IndustryRegistration() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    // --- Your existing flat formData state ---
+    // --- Your existing flat formData state is perfect ---
     companyName: '',
     companyEmail: '',
     companyPhone: '',
@@ -1436,13 +1496,16 @@ export default function IndustryRegistration() {
                 </div>
             </section>
 
+            {error && <p className="text-red-400 text-sm text-center py-4">{error}</p>}
+
             {/* Submit Button */}
             <div className="mt-8 text-center">
                 <button
                     type="submit"
+                    disabled={loading}
                     className="px-8 py-3 bg-gradient-to-r from-emerald-500 to-sky-500 text-white font-bold rounded-lg hover:from-emerald-600 hover:to-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 focus:ring-offset-slate-900 transition-all duration-300 transform hover:scale-105"
                 >
-                    Register and Post Internship
+                    {loading ? 'Submitting...' : 'Register and Post Internship'}
                 </button>
             </div>
           </form>
