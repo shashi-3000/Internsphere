@@ -6,7 +6,7 @@ const studentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true,
-        unique: true // Each user can only have one student profile
+        unique: true 
     },
     
     // --- Basic Information ---

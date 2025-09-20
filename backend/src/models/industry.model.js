@@ -30,8 +30,8 @@ const industrySchema = new mongoose.Schema({
         phone: { type: String, required: true }
     },
     
-    // NOTE: In a real-world app, you might make a separate "Internship" model.
-    // For a hackathon, combining them here is faster and simpler.
+    // NOTE: In a real-world app, might make a separate "Internship" model.
+    
     // --- Internship Details ---
     internshipDetails: {
         title: { type: String, required: true },

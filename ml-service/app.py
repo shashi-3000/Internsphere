@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pandas as pd
 
-# Import our new logic
 from matcher.scoring import create_score_matrix
 from matcher.allocation import run_allocation
 
@@ -23,7 +22,7 @@ def match_students():
     internships_json = data['internships']
     
     if not students_json or not internships_json:
-        return jsonify({"matches": {}}) # Return empty if no data
+        return jsonify({"matches": {}})
 
     print(f"Received {len(students_json)} students and {len(internships_json)} internships.")
 

@@ -1,27 +1,3 @@
-// import express from "express";
-// import cors from "cors";
-// import cookieParser from "cookie-parser";
-// import userRouter from './routes/user.route.js'; // Import the router
-
-// const app = express();
-
-// app.use(cors({
-//     origin: process.env.CORS_ORIGIN,
-//     credentials: true
-// }));
-
-// app.use(express.json({ limit: "16kb" }));
-// app.use(express.urlencoded({ extended: true, limit: "16kb" }));
-// app.use(express.static("public"));
-// app.use(cookieParser());
-
-
-// app.use("/api/v1/users", userRouter);
-
-
-// export default app;
-
-
 
 import express from "express";
 import cors from "cors";
@@ -55,7 +31,7 @@ app.use((req, res, next) => {
 
 
 // --- Route Mounting ---
-// This is where you connect your route files to the main app
+// This is where we connect your route files to the main app
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/students", studentRouter);
 app.use("/api/v1/industry", industryRouter);

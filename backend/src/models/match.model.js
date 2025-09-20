@@ -3,15 +3,15 @@ import mongoose from "mongoose";
 const matchSchema = new mongoose.Schema({
     student: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Student', // ✅ Fixed: Capital 'S' to match your Student model export
+        ref: 'Student', 
         required: true,
     },
     internship: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Industry', // ✅ Fixed: Capital 'I' to match your Industry model export
+        ref: 'Industry',
         required: true,
     },
-    matchScore: { // It's good practice to save the score that led to the match
+    matchScore: {
         type: Number,
         required: true,
     },

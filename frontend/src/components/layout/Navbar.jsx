@@ -164,7 +164,7 @@ export default function Navbar() {
             About
           </NavLink>
           
-          {/* --- THE NEW DYNAMIC LINK --- */}
+          
           {/* Show Dashboard link only if user is logged in */}
           {user && (
             <NavLink

@@ -4,7 +4,7 @@ import './App.css'
 // import { AuthProvider } from "./context/AuthContext.jsx"; // 1. Import the AuthProvider
 import { AuthProvider } from "./context/AuthContext.jsx";
 
-// --- Your Page Imports ---
+
 import About from './pages/About.jsx'
 import Home from './pages/Home.jsx'
 import Login from './pages/Login.jsx'
@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <Router>
-        {/* 2. Wrap your entire Routes component with the AuthProvider */}
+        
         <AuthProvider>
           <Routes>
             <Route element={<Layout />}>
