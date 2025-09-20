@@ -32,6 +32,7 @@ import userRouter from "./routes/user.route.js";
 import studentRouter from "./routes/student.route.js";
 import industryRouter from "./routes/industry.route.js";
 // import internshipRouter from "./routes/internship.route.js";
+import matchRouter from "./routes/match.route.js"
 
 const app = express();
 
@@ -59,6 +60,7 @@ app.use("/api/v1/users", userRouter);
 app.use("/api/v1/students", studentRouter);
 app.use("/api/v1/industry", industryRouter);
 // app.use("/api/v1/internships", internshipRouter);
+app.use("/api/v1/match", matchRouter); 
 
 
 // --- Simple Test Route ---

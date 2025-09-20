@@ -45,6 +45,8 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { Student } from "../models/student.model.js";
 import { User } from "../models/user.model.js";
+import { Match } from "../models/match.model.js"; 
+import { Industry } from "../models/industry.model.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 
 const completeStudentProfile = asyncHandler(async (req, res) => {
@@ -102,7 +104,7 @@ const completeStudentProfile = asyncHandler(async (req, res) => {
     );
 });
 
-// --- NEW FUNCTION ---
+
 // Fetches all student profiles from the database.
 const getAllStudents = asyncHandler(async (req, res) => {
     const students = await Student.find({}); // Find all documents with no filter
@@ -116,4 +118,31 @@ const getAllStudents = asyncHandler(async (req, res) => {
     );
 });
 
-export { completeStudentProfile, getAllStudents };
+
+
+// The getStudentDashboard function will now work correctly
+const getStudentDashboard = asyncHandler(async (req, res) => {
+    const studentId = req.user.profileId; 
+
+    const matches = await Match.find({ student: studentId })
+        .populate({
+            path: 'internship', 
+            select: 'companyDetails internshipDetails'
+        });
+
+    if (!matches) {
+        return res.status(200).json(new ApiResponse(200, { topMatches: [] }, "No matches found."));
+    }
+
+    const topMatches = matches.map(match => ({
+        internshipId: match.internship?._id,
+        company: match.internship?.companyDetails?.companyName,
+        title: match.internship?.internshipDetails?.title,
+        location: match.internship?.companyDetails?.city,
+        matchScore: match.matchScore
+    }));
+
+    return res.status(200).json(new ApiResponse(200, { topMatches }, "Fetched dashboard data."));
+});
+
+export { completeStudentProfile, getAllStudents, getStudentDashboard };

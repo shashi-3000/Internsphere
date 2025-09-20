@@ -2,6 +2,7 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { Industry } from "../models/industry.model.js";
 import { User } from "../models/user.model.js";
+import { Match } from "../models/match.model.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 
 const completeIndustryProfile = asyncHandler(async (req, res) => {
@@ -38,7 +39,7 @@ const completeIndustryProfile = asyncHandler(async (req, res) => {
     );
 });
 
-// --- NEW FUNCTION ---
+
 // Fetches all industry profiles, which contain internship data.
 const getAllInternships = asyncHandler(async (req, res) => {
     const industries = await Industry.find({}); // Find all documents
@@ -53,4 +54,54 @@ const getAllInternships = asyncHandler(async (req, res) => {
     );
 });
 
-export { completeIndustryProfile,getAllInternships };
+
+// --- UPDATED DASHBOARD FUNCTION WITH DEBUGGING ---
+const getIndustryDashboard = asyncHandler(async (req, res) => {
+    console.log("\n--- 🕵️‍♂️ INDUSTRY DASHBOARD DEBUG ---");
+    
+    // 1. Get the logged-in industry's profile ID
+    const industryId = req.user.profileId;
+    console.log("1. Logged-in Industry Profile ID:", industryId);
+
+    // 2. Find all matches for THIS industry's internship in the Match collection
+    const matches = await Match.find({ internship: industryId })
+        .populate({
+            path: 'student', // Tell Mongoose to get the full student profile
+            select: 'fullName skills academicDetails' // Only get the data we need
+        });
+    
+    console.log("2. Found matches from DB:", matches);
+    
+    if (!matches || matches.length === 0) {
+        console.log("3. No matches found for this industry.");
+        return res.status(200).json(
+            new ApiResponse(200, { topCandidates: [] }, "No AI-matched candidates found yet.")
+        );
+    }
+    
+    // 3. Format the data for the dashboard
+    const topCandidates = matches.map(match => {
+        // This check is crucial. If 'student' is null, it means the .populate() failed.
+        if (!match.student) {
+            console.error("❌ POPULATE FAILED! The link to the student profile is broken for match:", match._id);
+            return null;
+        }
+        return {
+            studentId: match.student._id,
+            name: match.student.fullName,
+            skills: match.student.skills.technicalSkills.join(', '),
+            cgpa: match.student.academicDetails.cgpa,
+            matchScore: match.matchScore
+        };
+    }).filter(candidate => candidate !== null); // Filter out any failed populates
+
+    console.log("4. Formatted candidate data to send to frontend:", topCandidates);
+    console.log("--- END INDUSTRY DASHBOARD DEBUG ---\n");
+
+    return res.status(200).json(
+        new ApiResponse(200, { topCandidates }, "Successfully fetched industry dashboard data.")
+    );
+});
+
+export { completeIndustryProfile, getAllInternships, getIndustryDashboard };
+
