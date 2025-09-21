@@ -45,14 +45,14 @@ export default function IndustryDashboard() {
         <div className="relative max-w-5xl mx-auto py-12 px-6">
             <div className="mb-8">
             <h1 className="text-4xl font-bold text-white">Welcome, {companyName}!</h1>
-            <p className="text-gray-300 mt-2">Manage your internships and find the best talent.</p>
+            <p className="text-gray-300 mt-2">Manage your internships and get the best talent.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Main Content Area */}
             <div className="md:col-span-2 space-y-8">
                 <section className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6">
-                <h2 className="text-2xl font-semibold text-emerald-400 mb-4">Top Matched Candidates for Your Internship</h2>
+                <h2 className="text-2xl font-semibold text-emerald-400 mb-4">Top Allocated Candidates for Your Internship</h2>
                 {error && <p className="text-red-400">{error}</p>}
                 <div className="space-y-4">
                     {dashboardData.topCandidates.length > 0 ? (

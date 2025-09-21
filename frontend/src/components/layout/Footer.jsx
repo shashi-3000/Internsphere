@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Brand */}
         <div>
-          <h2 className="text-2xl font-bold text-white">🌌 InternConnect</h2>
+          <h2 className="text-2xl font-bold text-white">🌌 InternSphere</h2>
           <p className="mt-3 text-sm text-gray-400">
             Connecting students with the right opportunities through smart AI matchmaking.  
           </p>

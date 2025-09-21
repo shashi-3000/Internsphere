@@ -80,7 +80,7 @@ export default function UserTypeSelection() {
                   </div>
                   
                   <div className="mt-6 px-6 py-2 bg-sky-600 text-white rounded-lg group-hover:bg-sky-700 transition-colors">
-                    Register as Industry
+                    Register as Recruiter
                   </div>
                 </div>
               </div>

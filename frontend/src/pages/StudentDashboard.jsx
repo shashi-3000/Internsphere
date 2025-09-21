@@ -51,7 +51,7 @@ export default function StudentDashboard() {
           {/* Main Content Area */}
           <div className="md:col-span-2 space-y-8">
             <section className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6">
-              <h2 className="text-2xl font-semibold text-emerald-400 mb-4">Your AI Top Matches</h2>
+              <h2 className="text-2xl font-semibold text-emerald-400 mb-4">Your AI Top Allocation</h2>
               {error && <p className="text-red-400">{error}</p>}
               <div className="space-y-4">
                 {dashboardData.topMatches.length > 0 ? (
