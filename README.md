@@ -14,10 +14,15 @@ A smart, automated platform designed to solve the challenge of internship placem
 ### Team Members:
 
 MEMBER_1 - 2023UCS1734 - @USERNAME
+
 MEMBER_2 - 2023UCS1729 - @USERNAME
+
 MEMBER_3 - 2023UCS1694 - @USERNAME
+
 MEMBER_4 - 2023UCS1703 - @USERNAME
+
 MEMBER_5 - 2023UCS1620 - @USERNAME
+
 MEMBER_6 - 2023UCS1553 - @USERNAME
 
 ## Project Links
