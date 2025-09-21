@@ -1,54 +1,38 @@
-# Internsphere
+# InternSphere: AI-Powered Internship Allocation System
+A smart, automated platform designed to solve the challenge of internship placements at scale for the Smart India Hackathon 2025.
 
-## InternSphere: AI-Powered Internship Matching Platform
-🚀 Project Overview
-InternSphere is a functional prototype developed for the Smart India Hackathon (SIH). It addresses the challenge of efficiently and optimally matching student interns with suitable industry opportunities under government-sponsored schemes.
+## 🚀 The Challenge
+The PM Internship Scheme is a vital initiative, but the manual process of matching thousands of applicants to suitable opportunities is a significant challenge. This often leads to suboptimal selections and delays, which undermines the effectiveness of the scheme. InternSphere is built to solve this problem.
 
-The core of the project is a smart, automated system that moves beyond simple recommendations. It uses an AI-based matchmaking engine to perform a system-wide optimal allocation, ensuring the best fit for both students and industries while considering various factors like skills, qualifications, location, and affirmative action policies.
+## ✨ Our Solution
+InternSphere moves beyond simple recommendation engines. It's an intelligent allocation system that finds the optimal set of pairings for the entire ecosystem of students and companies.
 
-✅ Current Status (As of September 17, 2025)
-The project is currently divided into two main, fully functional services: a React frontend and a Node.js backend. The data collection and user management layers are 100% complete.
+Our unique two-stage AI engine ensures fairness, efficiency, and a higher success rate for all participants:
 
-## Frontend (React + Vite)
-Robust Authentication: Fully implemented user signup, login, and logout flow.
+AI Scoring Engine: Using Natural Language Processing (TF-IDF & Cosine Similarity), the engine calculates a detailed "Compatibility Score" for every possible student-internship pair, considering skills, qualifications, sector interests, and location.
 
-Centralized State Management: Uses React Context (AuthContext) to manage user authentication state across the entire application.
+AI Allocation Engine: The scores are then fed into the Nobel Prize-winning Gale-Shapley algorithm to find a "stable" and fair set of matches that respects company capacities and affirmative action policies.
 
-Detailed Onboarding: Multi-step registration process for both Students and Industries, collecting a rich set of data points for the AI engine.
+The result is not just a list of suggestions; it's a globally optimized recommendation presented as a "Top Match" to each student, empowering them with the best possible starting point while still giving them the final choice.
 
-### Dynamic UI:
+## 🔧 Technical Architecture
+Our system uses a modern microservice architecture to ensure scalability and a clean separation of concerns.
 
-A smart, conditional navigation bar that changes based on login status and user type.
+Frontend (React): A dynamic and responsive user interface where students and industries manage their profiles and view dashboard results.
 
-A dynamic profile page that correctly displays detailed information for either a student or an industry user.
+Backend API (Node.js/Express): The central hub that manages user authentication (JWT), profile data, and communicates with the other services. It stores all data in a MongoDB database.
 
-Visually appealing and functional dashboard mockups.
-
-Secure API Communication: A centralized axios service layer with interceptors automatically handles attaching JWT access tokens to protected requests.
-
-## Backend (Node.js + Express.js)
-Secure Authentication API: Full implementation of user registration and login using JSON Web Tokens (JWT), including access and refresh token logic.
-
-Advanced Data Modeling: Mongoose schemas designed to handle two distinct user types (student, industry) linked to a single User model for authentication, using refPath for dynamic population.
-
-Complete Profile Management: Protected API endpoints for creating and fetching detailed student and industry profiles.
-
-Data-Rich Endpoints: API routes are in place to securely provide all student and industry data needed for the AI engine.
-
-Professional Structure: The backend follows a clean, scalable structure, separating logic into routes, controllers, models, and middleware.
-
-Database Connectivity: Successfully connected to and performing CRUD operations on a MongoDB Atlas cluster.
+ML Service (Python/Flask): A specialized "brain" that receives data from the Node.js backend, runs the scoring and allocation algorithms, and returns the final, optimal matches.
 
 ## 💻 Tech Stack
-Area
 
 Technology
 
-Frontend
+### Frontend
 
 React.js, Vite, Tailwind CSS, React Router, Axios
 
-Backend
+### Backend
 
 Node.js, Express.js
 
@@ -56,27 +40,32 @@ Database
 
 MongoDB with Mongoose
 
+AI/ML Service
+
+Python, Flask, Pandas, Scikit-learn
+
 Authentication
 
 JSON Web Tokens (JWT), bcrypt
 
 ## 🛠️ How to Run the Project Locally
-You need to run two separate servers for the application to work.
 
-1. Running the Backend Server
+To run the full application, you need to start all three services in separate terminals.
+
+### 1. Backend Server (Node.js)
 Navigate to the backend directory:
 
-cd backend
+cd code/backend
 
-Install all the required packages. The npm install command reads the package.json file and automatically downloads all the necessary dependencies.
+Install dependencies from package.json:
 
 npm install
 
-Create a .env file in the backend root and add your environment variables:
+Create a .env file and add your environment variables:
 
 PORT=3000
 MONGODB_URI=<Your_MongoDB_Atlas_Connection_String>
-DB_NAME=<Your_Database_Name> # e.g., Niyati
+DB_NAME=<Your_Database_Name>
 CORS_ORIGIN=http://localhost:5173
 ACCESS_TOKEN_SECRET=<Your_Secret_Key>
 ACCESS_TOKEN_EXPIRY=1d
@@ -87,14 +76,14 @@ Start the server:
 
 npm run dev
 
-The backend will be running on http://localhost:3000.
+(Backend will run on http://localhost:3000)
 
-2. Running the Frontend Server
+### 2. Frontend Server (React)
 Open a new terminal and navigate to the frontend directory:
 
-cd frontend
+cd code/frontend
 
-Install all the required packages from package.json:
+Install dependencies from package.json:
 
 npm install
 
@@ -102,10 +91,17 @@ Start the development server:
 
 npm run dev
 
-## Database Setup
+(Frontend will run on http://localhost:5173)
 
-This project uses MongoDB. Each teammate should:
+### 3. ML Service (Python)
+Open a third terminal and navigate to the ML service directory:
 
-1. Create their own MongoDB instance (local or MongoDB Atlas free cluster).  
-2. Create a `.env` file in the root directory.  
-3. Add their MongoDB connection URI in `.env`:
+cd code/ml-service
+
+Install dependencies from requirements.txt:
+
+pip install -r requirements.txt
+
+Start the Flask server:
+
+python app.py
