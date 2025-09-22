@@ -1,6 +1,6 @@
 import { useAuth } from '../context/AuthContext';
 import { Navigate, Link } from 'react-router-dom';
-import img from "../assets/gradientbg.jpg";
+import img from "/assets/gradientbg.jpg";
 
 
 const ProfileSection = ({ title, data }) => {
