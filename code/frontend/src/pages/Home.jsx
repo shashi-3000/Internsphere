@@ -1,4 +1,4 @@
-// src/pages/Home.jsx
+
 import { Briefcase, Sparkles, UserCheck } from "lucide-react";
 import Card from "../components/ui/Card";
 import img from "../assets/workTable.jpg";
@@ -16,7 +16,7 @@ export default function Home() {
           backgroundPosition: "center",
         }}
       >
-        {/* Dark overlay for readability */}
+        
         <div className="absolute inset-0 bg-black/70"></div>
 
         {/* Content */}

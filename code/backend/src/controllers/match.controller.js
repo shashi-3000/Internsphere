@@ -31,15 +31,15 @@ const runMatchingAlgorithm = asyncHandler(async (req, res) => {
         await Match.deleteMany({});
         console.log("🧹 Cleared old match results from the database.");
 
-        // Save the new match results to our MongoDB database.
+        
         const matchesToSave = [];
-        // The python service returns a dictionary like { student_id: internship_id }
+        
         for (const studentId in matchResults.matches) {
             const internshipId = matchResults.matches[studentId];
             matchesToSave.push({
                 student: studentId,
                 internship: internshipId,
-                matchScore: 0.99, // We can enhance the python script to return scores later
+                matchScore: 0.99, 
                 status: 'pending'
             });
         }

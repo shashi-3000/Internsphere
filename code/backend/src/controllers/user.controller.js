@@ -1,7 +1,7 @@
 import {asyncHandler} from "../utils/asyncHandler.js"
 import {ApiError} from "../utils/ApiError.js"
 import { User } from "../models/user.model.js" 
-import { Student } from "../models/student.model.js" // Add this import
+import { Student } from "../models/student.model.js" 
 import { ApiResponse } from "../utils/ApiResponse.js"
 import jwt from "jsonwebtoken"
 
@@ -118,18 +118,16 @@ const logoutUser = asyncHandler(async(req,res)=>{
 
 })
 
-// FIXED: getProfile - Now fetches complete profile data
+//getProfile 
 const getProfile = asyncHandler(async (req, res) => {
     const userId = req.user._id;
     
-    // Get the basic user info
     const user = await User.findById(userId).select("-password -refreshToken");
     
     if (!user) {
         throw new ApiError(404, "User not found");
     }
     
-    // If user has no profile yet (just registered), return basic info
     if (!user.userType || !user.profileId) {
         return res.status(200).json(
             new ApiResponse(
@@ -146,14 +144,10 @@ const getProfile = asyncHandler(async (req, res) => {
     
     let detailedProfile = null;
     
-    // Fetch the detailed profile based on userType
     if (user.userType === 'student') {
         detailedProfile = await Student.findOne({ user: userId });
     }
-    // Add other userTypes here when you implement them
-    // else if (user.userType === 'industry') {
-    //     detailedProfile = await Industry.findOne({ user: userId });
-    // }
+
     
     return res.status(200).json(
         new ApiResponse(
@@ -173,7 +167,6 @@ const deleteAccount = asyncHandler(async (req, res) => {
     
     const userId = req.user._id;
     
-    // Also delete the associated profile
     const user = await User.findById(userId);
     if (user && user.userType === 'student') {
         await Student.findOneAndDelete({ user: userId });

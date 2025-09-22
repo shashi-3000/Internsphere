@@ -24,7 +24,7 @@ const ProfileSection = ({ title, data }) => {
                         );
                     }
                     
-                    // Handle boolean values
+                    
                     if (typeof value === 'boolean') {
                         return (
                             <div key={key}>

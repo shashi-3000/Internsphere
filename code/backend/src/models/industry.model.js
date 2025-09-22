@@ -1,15 +1,15 @@
 import mongoose from "mongoose";
 
 const industrySchema = new mongoose.Schema({
-    // Link back to the main user login
+    
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true,
-        unique: true // Each user can only have one industry profile
+        unique: true 
     },
 
-    // --- Company Details ---
+   
     companyDetails: {
         companyName: { type: String, required: true },
         companyEmail: { type: String, required: true },
@@ -22,7 +22,7 @@ const industrySchema = new mongoose.Schema({
         state: { type: String, required: true }
     },
 
-    // --- Contact Person ---
+    
     contactPerson: {
         name: { type: String, required: true },
         designation: { type: String, required: true },
@@ -30,9 +30,7 @@ const industrySchema = new mongoose.Schema({
         phone: { type: String, required: true }
     },
     
-    // NOTE: In a real-world app, might make a separate "Internship" model.
     
-    // --- Internship Details ---
     internshipDetails: {
         title: { type: String, required: true },
         department: { type: String, required: true },
@@ -45,7 +43,7 @@ const industrySchema = new mongoose.Schema({
         workingHours: { type: String }
     },
 
-    // --- Requirements ---
+    
     requirements: {
         requiredSkills: [String],
         preferredCourse: [String],
@@ -53,7 +51,7 @@ const industrySchema = new mongoose.Schema({
         yearOfStudy: [String]
     },
 
-    // --- Compensation & Benefits ---
+  
     compensation: {
         stipend: { type: String, required: true },
         providesAccommodation: { type: Boolean, default: false },
@@ -62,20 +60,18 @@ const industrySchema = new mongoose.Schema({
         otherBenefits: { type: String }
     },
 
-    // --- Work Details ---
+    
     workDetails: {
         jobDescription: { type: String, required: true },
         learningOutcomes: { type: String }
     },
 
-    // --- Preferences ---
     preferences: {
         preferredStates: [String],
         diversityPreferences: { type: String },
         ruralCandidatesWelcome: { type: Boolean }
     },
     
-    // --- Company Verification ---
     verification: {
         registrationNumber: { type: String },
         gstNumber: { type: String },

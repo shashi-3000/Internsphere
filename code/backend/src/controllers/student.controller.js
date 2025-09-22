@@ -14,7 +14,6 @@ const completeStudentProfile = asyncHandler(async (req, res) => {
 
     const userId = req.user._id;
 
-    // Check if the user already has a profile
     const existingProfile = await Student.findOne({ user: userId });
     if (existingProfile) {
         throw new ApiError(400, "Student profile already exists for this user.");
@@ -26,7 +25,7 @@ const completeStudentProfile = asyncHandler(async (req, res) => {
         location, affirmativeAction, experience, preferences 
     } = req.body;
 
-    // Basic validation to ensure main fields are present
+    
     if (!fullName || !phone || !academicDetails || !location) {
         throw new ApiError(400, "Missing required profile fields like fullName, phone, academicDetails, or location.");
     }
@@ -61,9 +60,8 @@ const completeStudentProfile = asyncHandler(async (req, res) => {
 });
 
 
-// Fetches all student profiles from the database.
 const getAllStudents = asyncHandler(async (req, res) => {
-    const students = await Student.find({}); // Find all documents with no filter
+    const students = await Student.find({}); 
 
     if (!students) {
         throw new ApiError(404, "No students found.");
@@ -76,7 +74,6 @@ const getAllStudents = asyncHandler(async (req, res) => {
 
 
 
-// The getStudentDashboard function 
 const getStudentDashboard = asyncHandler(async (req, res) => {
     const studentId = req.user.profileId; 
 

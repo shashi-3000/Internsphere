@@ -1,5 +1,3 @@
-
-
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import api from '../services/api';
 import { useNavigate } from 'react-router-dom';
@@ -19,7 +17,7 @@ export const AuthProvider = ({ children }) => {
             const response = await api.get('/users/profile');
             console.log('✅ AuthContext: API returned profile data:', response.data.data);
             
-            // FIXED: Properly destructure the API response
+            
             const { user: userData, profile: profileData, hasProfile: hasProfileFlag } = response.data.data;
             
             setUser(userData);
@@ -58,18 +56,18 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem('accessToken', accessToken);
         setUser(userData);
         
-        // After login, fetch the complete profile
+        
         setTimeout(() => {
             fetchProfile();
         }, 100);
         
-        // Always redirect to home page after login
+        
         navigate('/');
     };
 
     const logout = async () => {
         try {
-            // Call the logout API to clear refresh token
+            
             await api.post('/users/logout');
         } catch (error) {
             console.error('Logout API error:', error);
@@ -87,7 +85,7 @@ export const AuthProvider = ({ children }) => {
         await fetchProfile();
     };
 
-    // FIXED: Provide all the necessary values to components
+    
     const value = { 
         user, 
         profile, 

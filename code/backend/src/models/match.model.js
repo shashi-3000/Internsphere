@@ -20,7 +20,7 @@ const matchSchema = new mongoose.Schema({
         enum: ['pending', 'accepted', 'rejected'],
         default: 'pending', // The student needs to act on the match
     },
-    // This helps us know which batch of matchmaking this result belongs to
+    
     runDate: {
         type: Date,
         default: Date.now

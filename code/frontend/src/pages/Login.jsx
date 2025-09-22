@@ -32,7 +32,7 @@ export default function Login() {
     };
 
     return (
-        // 2. Apply the background image to an outer section
+        
         <section
             className="relative h-screen flex items-center justify-center px-6"
             style={{
@@ -41,10 +41,10 @@ export default function Login() {
                 backgroundPosition: "center",
             }}
         >
-            {/* 3. Add the semi-transparent overlay */}
+            
             <div className="absolute inset-0 bg-slate-900 bg-opacity-70"></div>
 
-            {/* 4. Make your form container relative to sit on top */}
+            
             <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-8 w-full max-w-md">
                 <div className="text-center mb-8">
                     <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-sky-400">

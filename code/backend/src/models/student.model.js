@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const studentSchema = new mongoose.Schema({
-    // Link back to the main user login
+    
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -9,7 +9,7 @@ const studentSchema = new mongoose.Schema({
         unique: true 
     },
     
-    // --- Basic Information ---
+    
     fullName: {
         type: String,
         required: true,
@@ -25,7 +25,7 @@ const studentSchema = new mongoose.Schema({
         enum: ['male', 'female', 'other', 'prefer-not-to-say']
     },
 
-    // --- Academic Details ---
+    
     academicDetails: {
         institution: { type: String, required: true },
         course: { type: String, required: true },
@@ -33,14 +33,14 @@ const studentSchema = new mongoose.Schema({
         cgpa: { type: String }
     },
 
-    // --- Skills & Interests ---
+    
     skills: {
         technicalSkills: [String],
         softSkills: [String],
         preferredSectors: [String]
     },
     
-    // --- Location Preferences ---
+    
     location: {
         currentCity: { type: String, required: true },
         currentState: { type: String, required: true },
@@ -48,21 +48,21 @@ const studentSchema = new mongoose.Schema({
         willingToRelocate: { type: Boolean }
     },
 
-    // --- Affirmative Action (for PM Scheme) ---
+    
     affirmativeAction: {
         socialCategory: { type: String },
         isFromRuralArea: { type: Boolean },
         isFromAspirationDistrict: { type: Boolean }
     },
 
-    // --- Experience ---
+    
     experience: {
         pastInternshipExperience: { type: String },
         projects: { type: String },
         achievements: { type: String }
     },
 
-    // --- Preferences ---
+   
     preferences: {
         internshipDuration: { type: String },
         stipendExpectation: { type: String }

@@ -1,7 +1,7 @@
 import React from 'react';
 import img from "../assets/profilebg.jpg"; 
 
-// Simple SVG icons for features.
+
 const BrainCircuitIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.3 1.08 2.87.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
 );
@@ -30,7 +30,7 @@ export default function About() {
 
         
         <div className="relative max-w-5xl mx-auto py-20 px-6">
-            {/* Hero Section */}
+            
             <div className="text-center mb-16">
                 <h1 className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-sky-400 leading-tight">
                     About InternSphere
@@ -40,7 +40,7 @@ export default function About() {
                 </p>
             </div>
 
-            {/* The Challenge Section */}
+            
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-8 mb-12">
                 <h2 className="text-3xl font-bold text-center text-white mb-6">The Challenge</h2>
                 <p className="text-gray-300 text-center leading-relaxed">
@@ -48,7 +48,7 @@ export default function About() {
                 </p>
             </div>
 
-            {/* Features Section */}
+            
             <h2 className="text-3xl font-bold text-center text-white mb-8">Our Solution: A Smart, Automated System</h2>
             <div className="grid md:grid-cols-3 gap-8 text-center mb-12">
                 <div className="bg-white/5 p-6 rounded-lg">
@@ -68,7 +68,7 @@ export default function About() {
                 </div>
             </div>
             
-            {/* How It Works Section */}
+            
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-8 mb-12">
                 <h2 className="text-3xl font-bold text-center text-white mb-6">How It Works</h2>
                 <div className="flex flex-col md:flex-row justify-center items-center gap-8">
@@ -92,7 +92,7 @@ export default function About() {
                 </div>
             </div>
 
-            {/* Tech Stack Section */}
+            
             <div className="text-center">
                 <h2 className="text-3xl font-bold text-white mb-4">Our Technology</h2>
                 <div className="flex justify-center gap-4 flex-wrap">

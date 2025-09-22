@@ -6,13 +6,13 @@ import api from '../services/api.js';
 export default function StudentRegistration() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    // Basic Info
+    
     fullName: '',
     email: '', 
     phone: '',
     gender: '',
     
-    // Academic Details (Flat)
+    
     institution: '',
     course: '',
     yearOfStudy: '',
@@ -63,13 +63,13 @@ export default function StudentRegistration() {
     }));
   };
 
-  // --- MODIFIED handleSubmit ---
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
-    // 1. Transform flat formData into the nested structure the backend expects
+    
     const profileData = {
         fullName: formData.fullName,
         phone: formData.phone,
@@ -108,7 +108,7 @@ export default function StudentRegistration() {
     };
 
     try {
-      // 2. Send the transformed data
+      
       await api.post('/students/complete-profile', profileData);
       alert('Profile completed successfully!');
       navigate('/student/dashboard');
@@ -150,8 +150,7 @@ export default function StudentRegistration() {
         <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-8">
           <form onSubmit={handleSubmit} className="space-y-8">
             
-            {/* --- YOUR FULL JSX FORM GOES HERE --- */}
-            {/* It will work perfectly as long as the 'name' attributes are correct */}
+            
 
             {/* Basic Information */}
             <section>
