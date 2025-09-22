@@ -9,21 +9,21 @@ A smart, automated platform designed to solve the challenge of internship placem
 
 ### Team Name: INNOVATRIX
 
-### Team Leader: @USERNAME 
+### Team Leader: @shreyasingh0406 
 
 ### Team Members:
 
-MEMBER_1 - 2023UCS1734 - @USERNAME
+MEMBER_1 - 2023UCS1734 - @shreyasingh0406
 
-MEMBER_2 - 2023UCS1729 - @USERNAME
+MEMBER_2 - 2023UCS1729 - @Pallavi-Kumari07
 
-MEMBER_3 - 2023UCS1694 - @USERNAME
+MEMBER_3 - 2023UCS1694 - @payalrolan
 
-MEMBER_4 - 2023UCS1703 - @USERNAME
+MEMBER_4 - 2023UCS1703 - @shashi-3000
 
-MEMBER_5 - 2023UCS1620 - @USERNAME
+MEMBER_5 - 2023UCS1620 - @kritikatanwar
 
-MEMBER_6 - 2023UCS1553 - @USERNAME
+MEMBER_6 - 2023UCS1553 - @prachiv24
 
 ## Project Links
 ### SIH Presentation: [Final SIH Presentation](URL TO PPT UPLOADED TO GITHUB)
