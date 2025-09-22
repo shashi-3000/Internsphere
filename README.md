@@ -21,7 +21,7 @@ A smart, automated platform designed to solve the challenge of internship placem
 - **MEMBER_6** - 2023UCS1553 - [@prachiv24](https://github.com/prachiv24)
 
 ## Project Links
-### SIH Presentation: [Final SIH Presentation](https://github.com/shashi-3000/Internsphere)
+### SIH Presentation: [Final SIH Presentation](https://github.com/shashi-3000/Internsphere/blob/main/files/Internal_PPT_INNOVATRIX.pdf)
 ### Video Demonstration: [Watch Video](UNLISTED YOUTUBE LINK)
 ### Live Deployment: [View Deployment](DEPLOYED LINK IF ANY)
 ### Source Code: [GitHub Repository](https://github.com/shashi-3000/Internsphere)
