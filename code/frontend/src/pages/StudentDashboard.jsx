@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
 import api from '../services/api'; 
-import img from "/assets/gradientbg.jpg"; 
+import img from "/assests/gradientbg.jpg"; 
 
 export default function StudentDashboard() {
   const { user } = useAuth();

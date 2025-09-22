@@ -1,5 +1,5 @@
 import React from 'react';
-import img from "/assets/profilebg.jpg"; 
+import img from "/assests/profilebg.jpg"; 
 
 
 const BrainCircuitIcon = () => (
