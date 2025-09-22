@@ -24,7 +24,7 @@ const runMatchingAlgorithm = asyncHandler(async (req, res) => {
     };
 
     try {
-        const response = await axios.post('http://localhost:8000/match', payload);
+        const response = await axios.post(`${process.env.BASE_URL_ML_SERVICE}/match`, payload);
         const matchResults = response.data;
         console.log("✅ Successfully received match results from Python service.");
 

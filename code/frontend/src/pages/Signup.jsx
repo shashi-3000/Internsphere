@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext'; 
 import { useNavigate, Link } from 'react-router-dom'; 
-import img from "../assets/loginSignupbg.jpg"; 
+import img from "/assets/loginSignupbg.jpg"; 
 
 export default function Signup() {
     const { signup } = useAuth();

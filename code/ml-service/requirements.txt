@@ -3,3 +3,5 @@ Flask-Cors
 pandas
 scikit-learn
 numpy
+gunicorn
+dotenv
