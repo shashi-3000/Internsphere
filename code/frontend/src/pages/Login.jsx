@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext'; 
 import { Link } from 'react-router-dom';
-import img from "/assets/loginSignupbg.jpg"; 
+import img from "/assests/loginSignupbg.jpg"; 
 export default function Login() {
     const { login } = useAuth(); 
     const [formData, setFormData] = useState({
