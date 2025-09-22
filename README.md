@@ -22,7 +22,7 @@ A smart, automated platform designed to solve the challenge of internship placem
 
 ## Project Links
 ### SIH Presentation: [Final SIH Presentation](https://github.com/shashi-3000/Internsphere/blob/main/files/Internal_PPT_INNOVATRIX.pdf)
-### Video Demonstration: [Watch Video](UNLISTED YOUTUBE LINK)
+### Video Demonstration: [Watch Video](https://youtu.be/WBAqN1OBuZs)
 ### Live Deployment: [View Deployment](DEPLOYED LINK IF ANY)
 ### Source Code: [GitHub Repository](https://github.com/shashi-3000/Internsphere)
 
