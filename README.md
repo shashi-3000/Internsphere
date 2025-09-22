@@ -7,30 +7,24 @@ A smart, automated platform designed to solve the challenge of internship placem
 
 ## Team Details
 
-### Team Name: INNOVATRIX
+**Team Name:** INNOVATRIX
 
-### Team Leader: @shreyasingh0406 
+**Team Leader:** [@shreyasingh0406](https://github.com/shreyasingh0406)
 
-### Team Members:
+**Team Members:**
 
-MEMBER_1 - 2023UCS1734 - @shreyasingh0406
-
-MEMBER_2 - 2023UCS1729 - @Pallavi-Kumari07
-
-MEMBER_3 - 2023UCS1694 - @payalrolan
-
-MEMBER_4 - 2023UCS1703 - @shashi-3000
-
-MEMBER_5 - 2023UCS1620 - @kritikatanwar
-
-MEMBER_6 - 2023UCS1553 - @prachiv24
+- **MEMBER_1** - 2023UCS1734 - [@shreyasingh0406](https://github.com/shreyasingh0406)
+- **MEMBER_2** - 2023UCS1729 - [@Pallavi-Kumari07](https://github.com/Pallavi-Kumari07)
+- **MEMBER_3** - 2023UCS1694 - [@payalrolan](https://github.com/payalrolan)
+- **MEMBER_4** - 2023UCS1703 - [@shashi-3000](https://github.com/shashi-3000)
+- **MEMBER_5** - 2023UCS1620 - [@kritikatanwar](https://github.com/kritikatanwar)
+- **MEMBER_6** - 2023UCS1553 - [@prachiv24](https://github.com/prachiv24)
 
 ## Project Links
-### SIH Presentation: [Final SIH Presentation](URL TO PPT UPLOADED TO GITHUB)
+### SIH Presentation: [Final SIH Presentation](https://github.com/shashi-3000/Internsphere)
 ### Video Demonstration: [Watch Video](UNLISTED YOUTUBE LINK)
 ### Live Deployment: [View Deployment](DEPLOYED LINK IF ANY)
-### Source Code: [GitHub Repository](GITHUB LINK TO THE REPO)
-### Additional Resources: [Other Relevant Links](ANY OTHER RELEVANT LINKS)
+### Source Code: [GitHub Repository](https://github.com/shashi-3000/Internsphere)
 
 
 
@@ -54,7 +48,7 @@ Advanced Data Modeling: Mongoose schemas designed to handle two distinct user ty
 
 Microservice Communication: Acts as the orchestrator, fetching data and communicating with the Python ML service to run the matchmaking.
 
-AI/ML Service (Python)
+### AI/ML Service (Python)
 Intelligent Scoring Engine: Uses NLP (TF-IDF & Cosine Similarity) to calculate a detailed compatibility score for every student-internship pair.
 
 Optimal Allocation Engine: Implements the Nobel Prize-winning Gale-Shapley algorithm to find a fair and stable set of matches for the entire system, respecting all constraints like company capacity and affirmative action.
