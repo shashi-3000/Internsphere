@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: intersphere-backend
+    env: node
+    plan: free
+    branch: main
+    rootDir: code/backend
+    buildCommand: "npm install"
+    startCommand: "node src/app.js"
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ML_SERVICE_URL
+        value: https://internsphere-ml.onrender.com
+
+  - type: web
+    name: intersphere-ml
+    env: python
+    plan: free
+    branch: main
+    rootDir: code/ml-service
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    autoDeploy: true
+    envVars:
+      - key: FLASK_ENV
+        value: production
