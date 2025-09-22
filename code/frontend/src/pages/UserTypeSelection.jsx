@@ -1,6 +1,6 @@
 // src/pages/UserTypeSelection.jsx
 import { Users, Building2 } from 'lucide-react';
-import img from "../assets/rajivGandhiSealink.jpg"
+import img from "/assets/rajivGandhiSealink.jpg"
 
 export default function UserTypeSelection() {
   return (
