@@ -13,17 +13,17 @@ A smart, automated platform designed to solve the challenge of internship placem
 
 **Team Members:**
 
-- **MEMBER_1** - 2023UCS1734 - [@shreyasingh0406](https://github.com/shreyasingh0406)
-- **MEMBER_2** - 2023UCS1729 - [@Pallavi-Kumari07](https://github.com/Pallavi-Kumari07)
-- **MEMBER_3** - 2023UCS1694 - [@payalrolan](https://github.com/payalrolan)
-- **MEMBER_4** - 2023UCS1703 - [@shashi-3000](https://github.com/shashi-3000)
-- **MEMBER_5** - 2023UCS1620 - [@kritikatanwar](https://github.com/kritikatanwar)
-- **MEMBER_6** - 2023UCS1553 - [@prachiv24](https://github.com/prachiv24)
+- **MEMBER_1** - SHREYA SINGH - 2023UCS1734 - [@shreyasingh0406](https://github.com/shreyasingh0406)
+- **MEMBER_2** - PALLAVI KUMARI - 2023UCS1729 - [@Pallavi-Kumari07](https://github.com/Pallavi-Kumari07)
+- **MEMBER_3** - PAYAL ROLAN - 2023UCS1694 - [@payalrolan](https://github.com/payalrolan)
+- **MEMBER_4** - SHASHI YADAV - 2023UCS1703 - [@shashi-3000](https://github.com/shashi-3000)
+- **MEMBER_5** - KRITIKA TANWAR - 2023UCS1620 - [@kritikatanwar](https://github.com/kritikatanwar)
+- **MEMBER_6** - PRACHI VERMA - 2023UCS1553 - [@prachiv24](https://github.com/prachiv24)
 
 ## Project Links
 ### SIH Presentation: [Final SIH Presentation](https://github.com/shashi-3000/Internsphere/blob/main/files/Internal_PPT_INNOVATRIX.pdf)
 ### Video Demonstration: [Watch Video](https://youtu.be/WBAqN1OBuZs)
-### Live Deployment: [View Deployment](DEPLOYED LINK IF ANY)
+### Live Deployment: [View Deployment](https://internsphere-k1ro.vercel.app/)
 ### Source Code: [GitHub Repository](https://github.com/shashi-3000/Internsphere)
 
 
