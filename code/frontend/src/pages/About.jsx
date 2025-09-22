@@ -1,5 +1,5 @@
 import React from 'react';
-import img from "../assets/profilebg.jpg"; 
+import img from "/assets/profilebg.jpg"; 
 
 // Simple SVG icons for features.
 const BrainCircuitIcon = () => (
