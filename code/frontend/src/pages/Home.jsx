@@ -1,8 +1,8 @@
 
 import { Briefcase, Sparkles, UserCheck } from "lucide-react";
 import Card from "../components/ui/Card";
-import img from "/assets/workTable.jpg";
-import img2 from "/assets/career.jpg"
+import img from "/assests/workTable.jpg";
+import img2 from "/assests/career.jpg"
 
 export default function Home() {
   return (
